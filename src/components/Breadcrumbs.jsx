@@ -1,11 +1,11 @@
+import { Link } from "react-router-dom";
 
 const Breadcrumbs = () => {
     return (
         <div className="breadcrumbs text-sm">
             <ul>
-                <li><a>Home</a></li>
-                <li><a>Documents</a></li>
-                <li>Add Document</li>
+                <li><Link>Home</Link></li>
+                <li><Link to={".."}>Documents</Link></li>
             </ul>
         </div>
     )

@@ -1,5 +1,5 @@
 import daisyui from "daisyui"
-
+import form from 'tailwindcss'
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -12,6 +12,7 @@ export default {
   },
   plugins: [
     daisyui,
+    form,
   ],
   daisyui: {
     themes: ["light", "dark"], // Add the themes you want to use

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import {
     Dialog,
     DialogPanel,
@@ -53,10 +54,10 @@ export default function Header() {
         <header className="bg-base-100">
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
+                    <Link to=".." relative='path' className="-m-1.5 p-1.5">
                         <span className="sr-only">Your Company</span>
                         <img alt="" src='/TerminalAI.png' className="h-12 w-auto" style={{ filter: theme == 'light' ? 'none' : 'invert(1)' }} />
-                    </a>
+                    </Link>
                 </div>
                 <div className="flex lg:hidden">
                     <button
@@ -113,15 +114,15 @@ export default function Header() {
                         </PopoverPanel>
                     </Popover>
 
-                    <a href="#" className="text-sm font-semibold leading-6 text-base-content">
+                    <Link to="features" className="text-sm font-semibold leading-6 text-base-content">
                         Features
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-base-content">
+                    </Link>
+                    <Link to="marketplace" className="text-sm font-semibold leading-6 text-base-content">
                         Marketplace
-                    </a>
-                    <a href="#" className="text-sm font-semibold leading-6 text-base-content">
-                        Company
-                    </a>
+                    </Link>
+                    <Link to="about" className="text-sm font-semibold leading-6 text-base-content">
+                        About
+                    </Link>
                     <label className="flex cursor-pointer gap-2" onClick={toggleTheme}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -154,23 +155,23 @@ export default function Header() {
 
                 </PopoverGroup>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" className="text-sm font-semibold leading-6 text-base-content">
+                    <Link to="auth" className="text-sm font-semibold leading-6 text-base-content">
                         Log in <span aria-hidden="true">&rarr;</span>
-                    </a>
+                    </Link>
                 </div>
             </nav>
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                 <div className="fixed inset-0 z-10" />
-                <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-base-content/10">
+                <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-base-100 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-base-content/10">
                     <div className="flex items-center justify-between">
-                        <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
+                        <Link to=".." className="-m-1.5 p-1.5">
+                            <span className="sr-only">Quotes</span>
                             <img
                                 alt=""
                                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                                 className="h-8 w-auto"
                             />
-                        </a>
+                        </Link>
                         <button
                             type="button"
                             onClick={() => setMobileMenuOpen(false)}
@@ -183,6 +184,7 @@ export default function Header() {
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
+
                                 <Disclosure as="div" className="-mx-3">
                                     <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-base-content hover:bg-gray-50">
                                         Product
@@ -201,32 +203,68 @@ export default function Header() {
                                         ))}
                                     </DisclosurePanel>
                                 </Disclosure>
-                                <a
-                                    href="#"
+
+                                <Link
+                                    to="features"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base-content hover:bg-gray-50"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Features
-                                </a>
-                                <a
-                                    href="#"
+                                </Link>
+                                <Link
+                                    to="marketplace"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base-content hover:bg-gray-50"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Marketplace
-                                </a>
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base-content hover:bg-gray-50"
+                                </Link>
+                                <Link
+                                    to="auth"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base-content hover:bg-base-100"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Company
-                                </a>
+                                </Link>
                             </div>
                             <div className="py-6">
-                                <a
-                                    href="#"
+                                <label className="flex cursor-pointer gap-2" onClick={toggleTheme}>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round">
+                                        <circle cx="12" cy="12" r="5" />
+                                        <path
+                                            d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+                                    </svg>
+                                    <input type="checkbox" value="synthwave" className="toggle theme-controller" defaultChecked={theme == 'light' ? false : true} />
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round">
+                                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div className="py-6">
+                                <Link
+                                    to="auth"
                                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-base-content hover:bg-gray-50"
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
                                     Log in
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

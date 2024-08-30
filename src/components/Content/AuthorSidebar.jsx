@@ -1,7 +1,7 @@
 
 const AuthorSidebar = () => {
     return (
-        <div className="flex justify-start items-center bg-base-200 py-3 px-6 rounded-2xl my-2" style={{ boxShadow: '0 1px 6px rgba(0, 0, 0, 0.25)' }}>
+        <div className="flex justify-start items-center bg-base-200 py-3 px-6 rounded-2xl my-2 hover:bg-base-100" style={{ boxShadow: '0 1px 6px rgba(0, 0, 0, 0.25)' }}>
             <div className="h-12 w-12 md:h-15 md:w-15 lg:h-18 lg:w-18">
                 <img
                     alt="Tailwind CSS examples"
